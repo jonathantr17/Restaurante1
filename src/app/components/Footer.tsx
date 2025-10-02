@@ -45,7 +45,7 @@ export default function Footer() {
 
         {/* Enlaces */}
         <div>
-          <h3 className="text-lg font-semibold text-[#C75B12] mb-4">Enlaces</h3>
+          <h3 className="text-2xl font-semibold text-[#C75B12] mb-4">Enlaces</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
               <a href="#home" className="hover:text-[#C75B12] border-b border-transparent hover:border-[#C75B12] transition-all">
@@ -72,7 +72,7 @@ export default function Footer() {
 
         {/* Contacto */}
         <div>
-          <h3 className="text-lg font-semibold text-[#C75B12] mb-4">Contacto</h3>
+          <h3 className="text-2xl font-semibold text-[#C75B12] mb-4">Contacto</h3>
           <p className="text-gray-300">machala n58-91 y Nicolas Vélez, Quito, Ecuador</p>
           <p className="text-gray-300">0998437329</p>
           <p className="text-gray-300">picanteriacarchi@hotmail.com</p>

@@ -3,11 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiHome, FiMenu, FiInfo, FiPhone } from "react-icons/fi";
+import { useState } from "react";
 import pastaImage from "@/assets/logo.png";
 import logoImage from "@/assets/logo1.png";
 import fondoImage from "@/assets/fondo.avif";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="relative w-full min-h-screen md:min-h-[70vh] text-white font-serif">
       {/* Imagen de fondo */}
@@ -28,7 +31,6 @@ export default function Header() {
         <div className="container mx-auto flex justify-between items-center px-4 md:px-6">
           {/* Logo y nombre */}
           <div className="flex items-center space-x-3">
-            {/* Logo */}
             <div className="flex-shrink-0">
               <Image
                 src={logoImage}
@@ -38,8 +40,6 @@ export default function Header() {
                 className="object-contain max-w-[38px] md:max-w-[70px]"
               />
             </div>
-
-            {/* Texto */}
             <div className="flex flex-col items-start leading-tight">
               <span className="font-serif font-bold uppercase text-base md:text-2xl text-[#C75B12] tracking-wide">
                 Picantería Carchi
@@ -84,10 +84,31 @@ export default function Header() {
           </nav>
 
           {/* Botón hamburguesa móvil */}
-          <button className="md:hidden text-3xl text-[#C75B12] focus:outline-none">
+          <button
+            className="md:hidden text-3xl text-[#C75B12] focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             ☰
           </button>
         </div>
+
+        {/* Menú móvil */}
+        {menuOpen && (
+          <nav className="md:hidden bg-[#1B3A2A] bg-opacity-95 flex flex-col space-y-4 py-4 px-6 absolute top-[70px] w-full z-10 shadow-lg">
+            <Link href="#home" className="flex items-center gap-2 text-lg">
+              <FiHome /> Home
+            </Link>
+            <Link href="#menu" className="flex items-center gap-2 text-lg">
+              <FiMenu /> Menu
+            </Link>
+            <Link href="#sobre-nosotros" className="flex items-center gap-2 text-lg">
+              <FiInfo /> Sobre Nosotros
+            </Link>
+            <Link href="#contactanos" className="flex items-center gap-2 text-lg">
+              <FiPhone /> Contacto
+            </Link>
+          </nav>
+        )}
       </div>
 
       {/* Hero Section */}

@@ -1,8 +1,16 @@
-import { FaApple, FaUtensils, FaHandshake } from 'react-icons/fa';
+"use client";
+
+import { HiOutlineSparkles, HiOutlineShieldCheck, HiOutlineHeart, HiOutlineUserGroup } from "react-icons/hi";
 import Image from "next/image";
 import nosotrosImage from "@/assets/fondo.avif";
+import { motion } from "framer-motion";
 
 export default function SobreNosotros() {
+  const iconVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section className="bg-white py-20 px-6 md:px-20 font-serif" id="sobre-nosotros">
       {/* Título */}
@@ -17,7 +25,6 @@ export default function SobreNosotros() {
 
       {/* Imagen y texto principal */}
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Imagen */}
         <div className="flex-1">
           <Image
             src={nosotrosImage}
@@ -26,9 +33,8 @@ export default function SobreNosotros() {
           />
         </div>
 
-        {/* Texto */}
         <div className="flex-1 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#C75B12] mb-6 drop-shadow-md">
+          <h2 className="text-4xl md:text-4xl font-bold text-[#C75B12] mb-6 drop-shadow-md">
             Nuestra Historia
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -49,34 +55,64 @@ export default function SobreNosotros() {
 
       {/* Valores */}
       <div className="mt-20 text-center">
-        <h3 className="text-3xl font-bold text-[#C75B12] mb-8">Nuestros Valores</h3>
+        <h3 className="text-4xl font-bold text-[#C75B12] mb-8">Nuestros Valores</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-20">
-          <div className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white">
-            <FaApple className="text-4xl mb-4 mx-auto" />
+          <motion.div
+            className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white flex flex-col items-center"
+            variants={iconVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <HiOutlineSparkles className="text-5xl mb-4" />
             <h4 className="font-bold text-xl mb-2">Tradición</h4>
-            <p className="text-gray-300">Recetas transmitidas de generación en generación.</p>
-          </div>
-          <div className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white">
-            <FaUtensils className="text-4xl mb-4 mx-auto" />
+            <p className="text-gray-300 text-center">Recetas transmitidas de generación en generación.</p>
+          </motion.div>
+
+          <motion.div
+            className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white flex flex-col items-center"
+            variants={iconVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <HiOutlineShieldCheck className="text-5xl mb-4" />
             <h4 className="font-bold text-xl mb-2">Calidad</h4>
-            <p className="text-gray-300">Ingredientes frescos y locales en cada plato.</p>
-          </div>
-          <div className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white">
-            <FaHandshake className="text-4xl mb-4 mx-auto" />
+            <p className="text-gray-300 text-center">Ingredientes frescos y locales en cada plato.</p>
+          </motion.div>
+
+          <motion.div
+            className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white flex flex-col items-center"
+            variants={iconVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <HiOutlineHeart className="text-5xl mb-4" />
             <h4 className="font-bold text-xl mb-2">Sabor</h4>
-            <p className="text-gray-300">Recetas auténticas con un toque especial.</p>
-          </div>
-          <div className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white">
-            <FaApple className="text-4xl mb-4 mx-auto" />
+            <p className="text-gray-300 text-center">Recetas auténticas con un toque especial.</p>
+          </motion.div>
+
+          <motion.div
+            className="p-6 bg-[#1B3A2A] rounded-lg shadow-lg text-white flex flex-col items-center"
+            variants={iconVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <HiOutlineUserGroup className="text-5xl mb-4" />
             <h4 className="font-bold text-xl mb-2">Servicio</h4>
-            <p className="text-gray-300">Atención cercana y amable a cada cliente.</p>
-          </div>
+            <p className="text-gray-300 text-center">Atención cercana y amable a cada cliente.</p>
+          </motion.div>
         </div>
       </div>
 
       {/* Misión y Visión */}
       <div className="mt-20 container mx-auto px-6 md:px-20 text-center">
-        <h3 className="text-3xl font-bold text-[#C75B12] mb-8">Misión y Visión</h3>
+        <h3 className="text-4xl font-bold text-[#C75B12] mb-8">Misión y Visión</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="bg-[#F9F9F9] p-6 rounded-lg shadow-md">
             <h4 className="font-bold text-2xl mb-4 text-[#1B3A2A]">Misión</h4>
