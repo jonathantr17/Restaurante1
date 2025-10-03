@@ -3,6 +3,7 @@ import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import SobreNosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
+import Testimonios from "./components/Testimonios";
 
 
 export default function Page() {
@@ -11,6 +12,7 @@ export default function Page() {
       <Header />
       <Menu />
       <SobreNosotros />
+      <Testimonios />
       <Contacto />
       <Footer />
     </main>
